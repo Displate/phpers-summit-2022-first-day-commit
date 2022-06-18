@@ -52,6 +52,11 @@
       <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
       <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
       <path value="$PROJECT_DIR$/vendor/phpstan/phpstan-strict-rules" />
+      <path value="$PROJECT_DIR$/vendor/masterminds/html5" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/bin/.phpunit" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
@@ -234,5 +239,10 @@
     <PhpStan_settings>
       <PhpStanConfiguration tool_path="$PROJECT_DIR$/vendor/bin/phpstan" />
     </PhpStan_settings>
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <phpunit_by_interpreter interpreter_id="bea83e35-f9f6-4f0e-af68-5dac42fc1ca7" load_method="PHPUNIT_PHAR" bootstrap_file_path="/app/tests/bootstrap.php" configuration_file_path="/app/phpunit.xml" custom_loader_path="/app/bin/phpunit" phpunit_phar_path="/app/bin/phpunit" use_bootstrap_file="true" use_configuration_file="true" />
+    </phpunit_settings>
   </component>
 </project>
