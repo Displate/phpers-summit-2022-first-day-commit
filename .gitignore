@@ -1,0 +1,23 @@
+###> symfony/framework-bundle ###
+*.local
+*.local.php
+var/
+vendor
+###< symfony/framework-bundle ###
+
+###> Docker ###
+docker-compose.override.yaml
+###< Docker ###
+
+###> friendsofphp/php-cs-fixer ###
+.php-cs-fixer.cache
+###< friendsofphp/php-cs-fixer ###
+
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+###< symfony/phpunit-bridge ###
+
+###> phpunit/phpunit ###
+phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
