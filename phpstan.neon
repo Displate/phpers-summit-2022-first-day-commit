@@ -1,0 +1,19 @@
+includes:
+    - vendor/phpstan/phpstan-strict-rules/rules.neon
+    - vendor/phpstan/phpstan-symfony/extension.neon
+    - vendor/phpstan/phpstan-symfony/rules.neon
+
+parameters:
+    level: 8
+    fileExtensions: [php]
+    tmpDir: /app/var/phpstan
+
+    paths:
+    	- src
+    	- public
+
+    # phpstan/phpstan-symfony config
+    symfony:
+        constant_hassers: false
+        container_xml_path: var/cache/dev/Displate_Phpers_KernelDevDebugContainer.xml
+        console_application_loader: bin/console

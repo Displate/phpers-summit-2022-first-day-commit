@@ -36,7 +36,8 @@
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "cs": "./vendor/bin/php-cs-fixer fix --dry-run --verbose",
-        "cs-fix": "./vendor/bin/php-cs-fixer fix --verbose"
+        "cs-fix": "./vendor/bin/php-cs-fixer fix --verbose",
+        "phpstan": "php ./vendor/bin/phpstan analyse -c phpstan.neon"
     },
     "conflict": {
         "symfony/symfony": "*"
