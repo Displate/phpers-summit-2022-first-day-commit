@@ -1,61 +1,61 @@
 {
-  "name": "displate/phpers-summit-2022",
-  "license": "MIT",
-  "description": "First Day Commit",
-  "type": "project",
-  "authors": [
-    {
-      "name": "Patryk Martynowicz",
-      "email": "patryk.martynowicz@displate.com"
-    }
-  ],
-  "require": {
-    "php": "^8.1",
-    "symfony/console": "6.1.*",
-    "symfony/dotenv": "6.1.*",
-    "symfony/flex": "^2.2",
-    "symfony/framework-bundle": "6.1.*",
-    "symfony/runtime": "6.1.*",
-    "symfony/yaml": "6.1.*"
-  },
-  "require-dev": {
-    "friendsofphp/php-cs-fixer": "^3.8",
-    "jetbrains/phpstorm-attributes": "^1.0",
-    "phpstan/phpstan": "^1.7",
-    "phpstan/phpstan-strict-rules": "^1.2",
-    "phpstan/phpstan-symfony": "^1.2"
-  },
-  "autoload": {
-    "psr-4": {
-      "Displate\\Phpers\\": "src/"
-    }
-  },
-  "scripts": {
-    "auto-scripts": {
-      "cache:clear": "symfony-cmd",
-      "assets:install %PUBLIC_DIR%": "symfony-cmd"
+    "name": "displate/phpers-summit-2022",
+    "license": "MIT",
+    "description": "First Day Commit",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Patryk Martynowicz",
+            "email": "patryk.martynowicz@displate.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "symfony/console": "6.1.*",
+        "symfony/dotenv": "6.1.*",
+        "symfony/flex": "^2.2",
+        "symfony/framework-bundle": "6.1.*",
+        "symfony/runtime": "6.1.*",
+        "symfony/yaml": "6.1.*"
     },
-    "cs": "./vendor/bin/php-cs-fixer fix --dry-run --verbose",
-    "cs-fix": "./vendor/bin/php-cs-fixer fix --verbose"
-  },
-  "conflict": {
-    "symfony/symfony": "*"
-  },
-  "extra": {
-    "symfony": {
-      "allow-contrib": false,
-      "require": "6.1.*"
-    }
-  },
-  "config": {
-    "optimize-autoloader": true,
-    "preferred-install": {
-      "*": "dist"
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.8",
+        "jetbrains/phpstorm-attributes": "^1.0",
+        "phpstan/phpstan": "^1.7",
+        "phpstan/phpstan-strict-rules": "^1.2",
+        "phpstan/phpstan-symfony": "^1.2"
     },
-    "sort-packages": true,
-    "allow-plugins": {
-      "symfony/flex": true,
-      "symfony/runtime": true
+    "autoload": {
+        "psr-4": {
+            "Displate\\Phpers\\": "src/"
+        }
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "cs": "./vendor/bin/php-cs-fixer fix --dry-run --verbose",
+        "cs-fix": "./vendor/bin/php-cs-fixer fix --verbose"
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "6.1.*"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true,
+            "symfony/runtime": true
+        }
     }
-  }
 }
