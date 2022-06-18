@@ -1,0 +1,4 @@
+home:
+  path: /
+  controller: \Displate\Phpers\Presentation\Http\Home
+  methods: GET
