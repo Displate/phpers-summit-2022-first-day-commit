@@ -22,6 +22,7 @@ function getFinder(): Finder
     return Finder::create()
         ->in(sprintf('%s/bin', $dir))
         ->in(sprintf('%s/src', $dir))
+        ->in(sprintf('%s/tests', $dir))
         ->append([
             __FILE__,
         ])

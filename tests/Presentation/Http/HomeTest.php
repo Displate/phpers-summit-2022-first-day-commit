@@ -1,7 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-namespace Presentation\Http;
+namespace Displate\Phpers\Test;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Request;
