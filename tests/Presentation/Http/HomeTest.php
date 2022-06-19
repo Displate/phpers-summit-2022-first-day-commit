@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Displate\Phpers\Test;
+namespace Displate\Phpers\Test\Presentation\Http;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Request;
