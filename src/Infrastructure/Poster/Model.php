@@ -6,4 +6,9 @@ namespace Displate\Phpers\Infrastructure\Poster;
 
 class Model
 {
+    public function __construct(
+        public readonly string $id,
+        public readonly string $size,
+    ) {
+    }
 }

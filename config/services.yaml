@@ -11,3 +11,6 @@ services:
   Displate\Phpers\Presentation\Http\:
     resource: '%kernel.project_dir%/src/Presentation/Http/'
     tags: [ 'controller.service_arguments' ]
+
+  Displate\Phpers\Infrastructure\Poster\ExternalServiceRepository:
+    public: true

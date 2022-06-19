@@ -9,6 +9,8 @@ use Displate\Phpers\Domain\PosterRepository;
 use RuntimeException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
@@ -17,6 +19,7 @@ class ExternalServiceRepository implements PosterRepository
     public function __construct(
         private readonly HttpClientInterface $httpClient,
         private readonly PosterFactory $posterFactory,
+        private readonly SerializerInterface $serializer,
     ) {
     }
 
@@ -25,7 +28,7 @@ class ExternalServiceRepository implements PosterRepository
         $response = $this->httpClient->request(
             Request::METHOD_GET,
             sprintf(
-                '/api/posters/%s',
+                'http://localhost:7200/api/posters/%s',
                 $posterId,
             ),
         );
@@ -39,6 +42,10 @@ class ExternalServiceRepository implements PosterRepository
 
     private function responseToModel(ResponseInterface $response): Model
     {
-        return new Model();
+        return $this->serializer->deserialize(
+            $response->getContent(),
+            Model::class,
+            JsonEncoder::FORMAT,
+        );
     }
 }
