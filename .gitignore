@@ -20,3 +20,8 @@ docker-compose.override.yaml
 ###> phpunit/phpunit ###
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+
+###> Gradle ###
+.gradle
+build
+###< Gradle ###

@@ -1,0 +1,64 @@
+plugins {
+    id 'com.avast.gradle.docker-compose' version "0.16.4"
+    id 'com.bmuschko.docker-remote-api' version "7.4.0"
+}
+
+wrapper {
+    distributionType = Wrapper.DistributionType.ALL
+}
+
+import org.apache.tools.ant.taskdefs.condition.Os
+import com.sun.security.auth.module.UnixSystem
+import com.bmuschko.gradle.docker.tasks.container.DockerExecContainer
+
+repositories {
+    mavenCentral()
+}
+
+dockerCompose {
+    projectName = "phpers-summit-2022"
+}
+
+tasks.register("buildProject", (Task it) -> {
+    it.group("phpers2022")
+
+    it.dependsOn(tasks.generateDockerComposeOverride)
+    it.dependsOn(tasks.composeBuild)
+    it.dependsOn(tasks.composeUp)
+    it.dependsOn(tasks.installComposerDependencies)
+
+    composeBuild.mustRunAfter(generateDockerComposeOverride)
+    composeUp.mustRunAfter(composeBuild)
+    installComposerDependencies.mustRunAfter(composeUp)
+})
+
+tasks.register("generateDockerComposeOverride", (Task it) -> {
+    it.group("phpers2022")
+
+    it.doLast {
+        if (Os.isFamily(Os.FAMILY_UNIX) || Os.isFamily(Os.FAMILY_MAC)) {
+            def unix = new UnixSystem()
+
+            PrintWriter writer = new PrintWriter("docker-compose.override.yaml")
+            writer.printf("version: '3.9'\n" +
+                    "\n" +
+                    "services:\n" +
+                    "  php:\n" +
+                    "    user: %d:%d\n",
+                    unix.getUid(),
+                    unix.getGid(),
+            )
+            writer.close()
+        }
+    }
+})
+
+tasks.register("installComposerDependencies", DockerExecContainer) {
+    it.group("phpers2022")
+    it.containerId = "phpers-summit-2022-php-1"
+    it.withCommand("composer", "install")
+
+    it.doLast {
+        it.runRemoteCommand()
+    }
+}
