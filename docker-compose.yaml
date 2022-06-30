@@ -1,5 +1,7 @@
 version: '3.9'
 
+name: phpers-summit-2022-first-day-commit
+
 services:
   php:
     build:

@@ -4,7 +4,7 @@
 
 ### Requirements
 * Docker engine
-* Docker compose with `docker-compose` executable (instead of Compose plugin - `docker compose`)
+* Docker compose `2.5` with `docker-compose` executable (instead of Compose plugin - `docker compose`)
 * Docker BuildKit enabled
 * Java Runtime Environment with `JAVA_HOME` environment variable
 
