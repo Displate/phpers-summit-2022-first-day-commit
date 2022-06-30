@@ -25,7 +25,6 @@ services:
       - php
 
   db:
-    container_name: phpers-summit-2022-db
     image: postgres:14-alpine3.14
     volumes:
       - db:/var/lib/postgresql/data/pgdata

@@ -16,7 +16,7 @@ repositories {
 }
 
 dockerCompose {
-    projectName = "phpers-summit-2022"
+    projectName = "phpers-summit-2022-first-day-commit"
 }
 
 tasks.register("buildProject", (Task it) -> {
@@ -55,7 +55,7 @@ tasks.register("generateDockerComposeOverride", (Task it) -> {
 
 tasks.register("installComposerDependencies", DockerExecContainer) {
     it.group("phpers2022")
-    it.containerId = "phpers-summit-2022-php-1"
+    it.containerId = "phpers-summit-2022-first-day-commit-php-1"
     it.withCommand("composer", "install")
 
     it.doLast {
